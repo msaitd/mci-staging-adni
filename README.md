@@ -102,7 +102,7 @@ scans with `run_local/RUN_1_cat12.bat`, then run `gpu_deep/RUN_4_staging.bat`.
 > Status, Conversion Trajectory, and the Limited Incremental Value of Structural MRI in ADNI.*
 > (2026). Manuscript under review.
 
-*(Update with DOI/journal once available.)*
+*(Will be updated with DOI/journal once available.)*
 
 ## License
 
