@@ -45,7 +45,6 @@ code/            Tabular pipeline (Python) — the main analyses
   within_mci_staging.py        amyloid A+/A−, conversion trajectory, four-class ordering
   fs_change_staging.py         leakage-safe landmark FreeSurfer-change arm
   amyloid_utility.py           calibration, decision curve, operating point, APOE-stratified, ΔAUC, cohort table
-  make_figures.py              Figure 1 (feature-family AUCs) and Figure 2 (clinical utility)
 gpu_deep/        Optional imaging arm (Python + PyTorch/MONAI, GPU) — Supplementary Table S3
   build_deep_manifest.py, build_staging_manifest.py, staging_deep.py
 run_local/       Optional CAT12 segmentation of baseline T1 scans (MATLAB + SPM12/CAT12)
@@ -75,7 +74,6 @@ python code/extract_biomarkers.py         # baseline biomarker table
 python code/within_mci_staging.py         # amyloid / trajectory / four-class staging  -> outputs/within_mci/
 python code/fs_change_staging.py          # leakage-safe landmark FreeSurfer-change arm
 python code/amyloid_utility.py            # calibration, DCA, operating point, APOE-stratified, ΔAUC, Table 1
-python code/make_figures.py               # Figure 1 and Figure 2  -> figures/
 ```
 
 ## Leakage controls (design summary)
