@@ -38,18 +38,18 @@ Subject-level tables, manifests, model out-of-fold predictions and trained weigh
 ```
 code/            Tabular pipeline (Python) — the main analyses
   ml_common.py                 leakage-safe, subject-level CV engine (asserts train/test disjointness)
-  01_extract_data.py           read ADNIMERGE2 .rda tables
-  02_build_manifest_cohorts.py subject-level cohorts (one row per subject)
-  03_build_features.py         feature families (demographics/APOE, cognition, FreeSurfer)
-  19_extract_biomarkers.py     baseline CSF/PET/plasma biomarker table
-  23_within_mci_staging.py     amyloid A+/A−, conversion trajectory, four-class ordering
-  28_fs_change_staging.py      leakage-safe landmark FreeSurfer-change arm
-  29_amyloid_utility.py        calibration, decision curve, operating point, APOE-stratified, ΔAUC, cohort table
+  extract_data.py              read ADNIMERGE2 .rda tables
+  build_manifest_cohorts.py    subject-level cohorts (one row per subject)
+  build_features.py            feature families (demographics/APOE, cognition, FreeSurfer)
+  extract_biomarkers.py        baseline CSF/PET/plasma biomarker table
+  within_mci_staging.py        amyloid A+/A−, conversion trajectory, four-class ordering
+  fs_change_staging.py         leakage-safe landmark FreeSurfer-change arm
+  amyloid_utility.py           calibration, decision curve, operating point, APOE-stratified, ΔAUC, cohort table
   make_figures.py              Figure 1 (feature-family AUCs) and Figure 2 (clinical utility)
 gpu_deep/        Optional imaging arm (Python + PyTorch/MONAI, GPU) — Supplementary Table S3
-  build_deep_manifest.py, build_staging_manifest.py, staging_deep.py, RUN_4_staging.bat
+  build_deep_manifest.py, build_staging_manifest.py, staging_deep.py
 run_local/       Optional CAT12 segmentation of baseline T1 scans (MATLAB + SPM12/CAT12)
-  step1_cat12_segment.m, RUN_1_cat12.bat
+  cat12_segment.m
 requirements.txt Python dependencies
 ```
 
@@ -82,9 +82,6 @@ python code/29_amyloid_utility.py         # calibration, DCA, operating point, A
 python code/make_figures.py               # Figure 1 and Figure 2  -> figures/
 ```
 
-**Optional imaging arm (Supplementary Table S3; requires raw T1 + GPU):** segment baseline
-scans with `run_local/RUN_1_cat12.bat`, then run `gpu_deep/RUN_4_staging.bat`.
-
 ## Leakage controls (design summary)
 
 - **Subject-level partitioning** — one row per subject; no participant in both train and test
@@ -98,9 +95,9 @@ scans with `run_local/RUN_1_cat12.bat`, then run `gpu_deep/RUN_4_staging.bat`.
 
 ## Citation
 
-> Dündar MS. *Staging within Mild Cognitive Impairment from Routinely Available Data: Amyloid
-> Status, Conversion Trajectory, and the Limited Incremental Value of Structural MRI in ADNI.*
-> (2026). Manuscript under review.
+> Dündar MS, Yılmaz B. *Staging within Mild Cognitive Impairment from Routinely Available Data:
+> Amyloid Status, Conversion Trajectory, and the Limited Incremental Value of Structural MRI in
+> ADNI.* (2026). Manuscript under review.
 
 *(Will be updated with DOI/journal once available.)*
 
@@ -109,11 +106,12 @@ scans with `run_local/RUN_1_cat12.bat`, then run `gpu_deep/RUN_4_staging.bat`.
 Code is released under the [MIT License](LICENSE). This license covers **the code only**;
 ADNI data remain governed by the ADNI Data Use Agreement and are not redistributed here.
 
-## Author
+## Authors
 
-**Mehmet Sait Dündar**, Erciyes University, Halil Bayraktar Health Services Vocational School,
-Department of Medical Imaging Techniques, Kayseri, Türkiye.
-ORCID: [0000-0002-0336-4825](https://orcid.org/0000-0002-0336-4825).
+**Mehmet Sait Dündar¹**, **Bülent Yılmaz²**
+
+1. Erciyes University, Halil Bayraktar Health Services Vocational School, Department of Medical Imaging Techniques, Kayseri, Türkiye. ORCID: [0000-0002-0336-4825](https://orcid.org/0000-0002-0336-4825).
+2. Department of Electrical and Computer Engineering, Gulf University for Science and Technology (GUST), Hawally, Kuwait. ORCID: [0000-0003-2954-1217](https://orcid.org/0000-0003-2954-1217).
 
 ## Acknowledgement
 
