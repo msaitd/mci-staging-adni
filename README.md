@@ -105,7 +105,7 @@ ADNI data remain governed by the ADNI Data Use Agreement and are not redistribut
 **Mehmet Sait Dündar¹**, **Bülent Yılmaz²**
 
 1. Medical Imaging Techniques, Halil Bayraktar Health Services Vocational School, Erciyes University, Kayseri, Türkiye. ORCID: [0000-0002-0336-4825](https://orcid.org/0000-0002-0336-4825).
-2. Department of Electrical and Computer Engineering, Gulf University for Science and Technology (GUST), Hawally, Kuwait. ORCID: [0000-0003-2954-1217](https://orcid.org/0000-0003-2954-1217).
+2. Electrical and Computer Engineering, Gulf University for Science and Technology (GUST), Hawally, Kuwait. ORCID: [0000-0003-2954-1217](https://orcid.org/0000-0003-2954-1217).
 
 ## Acknowledgement
 
