@@ -53,10 +53,6 @@ run_local/       Optional CAT12 segmentation of baseline T1 scans (MATLAB + SPM1
 requirements.txt Python dependencies
 ```
 
-The tabular pipeline reproduces the main text (Tables 1–2, Figures 1–2) and Supplementary
-Tables S1, S1b, S2, S4, S5, S6. The optional imaging arm reproduces Supplementary Table S3
-(end-to-end 3D CNN staging) and requires raw T1 scans and an NVIDIA GPU.
-
 ## Installation
 
 ```bash
@@ -72,13 +68,13 @@ and a CUDA-enabled PyTorch build for the CNN.
 Run from the repository root (scripts expect `./data` and write to `./outputs`):
 
 ```bash
-python code/01_extract_data.py            # read ADNIMERGE2 .rda tables  ->  data/
-python code/02_build_manifest_cohorts.py  # subject-level cohorts (one row/subject)
-python code/03_build_features.py          # feature families
-python code/19_extract_biomarkers.py      # baseline biomarker table
-python code/23_within_mci_staging.py      # amyloid / trajectory / four-class staging  -> outputs/within_mci/
-python code/28_fs_change_staging.py       # leakage-safe landmark FreeSurfer-change arm
-python code/29_amyloid_utility.py         # calibration, DCA, operating point, APOE-stratified, ΔAUC, Table 1
+python code/extract_data.py               # read ADNIMERGE2 .rda tables  ->  data/
+python code/build_manifest_cohorts.py     # subject-level cohorts (one row/subject)
+python code/build_features.py             # feature families
+python code/extract_biomarkers.py         # baseline biomarker table
+python code/within_mci_staging.py         # amyloid / trajectory / four-class staging  -> outputs/within_mci/
+python code/fs_change_staging.py          # leakage-safe landmark FreeSurfer-change arm
+python code/amyloid_utility.py            # calibration, DCA, operating point, APOE-stratified, ΔAUC, Table 1
 python code/make_figures.py               # Figure 1 and Figure 2  -> figures/
 ```
 
