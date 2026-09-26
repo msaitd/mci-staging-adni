@@ -61,8 +61,23 @@ The script applies the frozen ADNI models unchanged and writes aggregate results
 (`external_validation/oasis_results/`; counts < 5 are masked in the log). MCI is defined by ADNI's
 operational criteria (CDR 0.5 and MMSE >= 24); PiB PET is the primary amyloid tracer.
 
+## 3c. External validation in NACC (Figure 5, Table S16)
+
+Requires an approved NACC data request (non-commercial use; manuscripts must be submitted to NACC
+before journal submission). Download the Quick-Access files (UDS investigator file; SCAN/CLARiTI and mixed-protocol
+amyloid PET GAAIN files; SCAN MRI FreeSurfer file; SCAN PET QC file), then run locally:
+
+```bash
+python external_validation/nacc_external_validation.py   # set NACC_ROOT to the download folder
+python code/figure5_external_validation.py
+```
+
+The script applies the frozen ADNI models unchanged and writes aggregate results only
+(`external_validation/nacc_results/`; counts < 5 are masked). MoCA scores (UDS v3 onwards) are converted to
+MMSE-equivalent scores with `external_validation/moca_mmse_crosswalk.csv` (Monsell et al., 2016, Table 3).
+
 Reproduces: Tables 1-2, Figures 1-4 and Supplementary Tables S1-S3 and S5-S14 (S14 is a literature
-summary); Figure 5 and Table S15 with section 3b. All revision analyses use the same fixed pipelines as `ml_common.py`, with imputation and
+summary); Figure 5 and Tables S15-S16 with sections 3b-3c. All revision analyses use the same fixed pipelines as `ml_common.py`, with imputation and
 scaling fitted inside each training partition.
 
 ## 4. Optional imaging arm (Supplementary Table S4; GPU + raw T1)
